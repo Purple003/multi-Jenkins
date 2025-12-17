@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   # Service MySQL
@@ -41,6 +40,8 @@ services:
       EUREKA_INSTANCE_HOSTNAME: eureka-server
       EUREKA_CLIENT_REGISTER_WITH_EUREKA: 'false'
       EUREKA_CLIENT_FETCH_REGISTRY: 'false'
+    volumes:
+      - ~/.m2:/root/.m2
 
   # Service Gateway
   gateway-service:
@@ -61,6 +62,8 @@ services:
       EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
       SPRING_CLOUD_CONSUL_HOST: ${CONSUL_HOST:-consul}
       SPRING_CLOUD_CONSUL_PORT: ${CONSUL_PORT:-8500}
+    volumes:
+      - ~/.m2:/root/.m2
 
   # Service Client
   client-service:
@@ -86,6 +89,8 @@ services:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL_CLIENT}
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - ~/.m2:/root/.m2
 
   # Service Voiture
   voiture-service:
@@ -111,6 +116,8 @@ services:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL_CAR}
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - ~/.m2:/root/.m2
 
   # Service phpMyAdmin
   phpmyadmin:
