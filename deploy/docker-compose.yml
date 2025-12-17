@@ -41,7 +41,7 @@ services:
       EUREKA_CLIENT_REGISTER_WITH_EUREKA: 'false'
       EUREKA_CLIENT_FETCH_REGISTRY: 'false'
     volumes:
-      - ~/.m2:/root/.m2
+      - C:/Users/PC/jenkins2/.m2:/root/.m2
 
   # Service Gateway
   gateway-service:
@@ -63,7 +63,7 @@ services:
       SPRING_CLOUD_CONSUL_HOST: ${CONSUL_HOST:-consul}
       SPRING_CLOUD_CONSUL_PORT: ${CONSUL_PORT:-8500}
     volumes:
-      - ~/.m2:/root/.m2
+      - C:/Users/PC/jenkins2/.m2:/root/.m2
 
   # Service Client
   client-service:
@@ -90,7 +90,7 @@ services:
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     volumes:
-      - ~/.m2:/root/.m2
+      - C:/Users/PC/jenkins2/.m2:/root/.m2
 
   # Service Voiture
   voiture-service:
@@ -117,7 +117,7 @@ services:
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     volumes:
-      - ~/.m2:/root/.m2
+      - C:/Users/PC/jenkins2/.m2:/root/.m2
 
   # Service phpMyAdmin
   phpmyadmin:
